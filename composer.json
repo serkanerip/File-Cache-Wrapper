@@ -1,0 +1,13 @@
+{
+    "name": "erip/fic-closure",
+    "description": "Lightweight file caching for php.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Serkan Erip",
+            "email": "serkanerip@gmail.com"
+        }
+    ],
+    "require": {}
+}
