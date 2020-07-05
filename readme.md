@@ -20,7 +20,8 @@ use Erip\FileCacheWrapper\FileCacheWrapper;
 * First parameter is filename. It creates a file in tmp folder with given filename.
 * If you give a absolute path that starting with /, it will create file in given path.
 * Second parameter is time to cache expire.
-* Last parameter is function that you want to cache.
+* Third parameter is function that you want to cache.
+* Fourth parameter is optional disable flag. If you give true flag it wont return cached data.
 */
 $getCachedDate = FileCacheWrapper::getCachedFunc("q", "15 seconds", function()
 {
