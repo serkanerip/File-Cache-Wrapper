@@ -1,6 +1,8 @@
 <?php
 
-class FCClosure
+namespace Erip\FileCacheWrapper;
+
+class FileCacheWrapper
 {
     public static function getCachedFunc(string $fileName, string $expTime, callable $func, bool $disable=false)
     {
