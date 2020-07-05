@@ -23,7 +23,7 @@ use Erip\FileCacheWrapper\FileCacheWrapper;
 * Third parameter is function that you want to cache.
 * Fourth parameter is optional disable flag. If you give true flag it wont return cached data.
 */
-$getCachedDate = FileCacheWrapper::getCachedFunc("q", "15 seconds", function()
+$getCachedDate = FileCacheWrapper::getCachedFunc("cache.txt", "15 seconds", function()
 {
     return date("H:i:s");
 });
