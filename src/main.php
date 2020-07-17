@@ -60,7 +60,3 @@ class FileCacheWrapper
         };
     }
 }
-
-$f = FileCacheWrapper::getCachedFunc("t.txt", "now", function(){return date("H:i:s  ");});
-
-echo $f();
