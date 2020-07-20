@@ -48,7 +48,7 @@ class FileCacheWrapper
                 flock($fileResource, LOCK_EX);
             }
 
-            $data = ($func)();
+            $data = \call_user_func_array($func, \func_get_args());
             $encodedData = serialize($data);
             $fileContent = strtotime($expTime).md5($encodedData).$encodedData;
             if (file_put_contents($filePath, $fileContent) === false) {
