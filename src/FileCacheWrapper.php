@@ -22,7 +22,7 @@ class FileCacheWrapper
 
         return function() use($filePath, $func, $expTime)
         {
-            $fileResource = fopen($filePath, "w+");
+            $fileResource = fopen($filePath, "rw+");
 
             if (file_exists($filePath) && filesize($filePath) > 42)
             {
