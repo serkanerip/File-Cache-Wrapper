@@ -7,13 +7,13 @@ class FileCacheWrapper
     public static function getCachedFunc(string $fileName, string $expTime, callable $func, bool $disable=false)
     {
         if (empty(str_replace(" ", "", $fileName))) {
-            throw new Exception("Filename cannot bet empty!");
+            throw new \Exception("Filename cannot bet empty!");
         }
         $trimmedFileName = trim($fileName);
         $filePath = $trimmedFileName[0] == "/" ? $trimmedFileName : "/tmp/$trimmedFileName";
 
         if (strtotime($expTime) === false) {
-            throw new Exception("Exptime should be a valid strtotime string.");
+            throw new \Exception("Exptime should be a valid strtotime string.");
         }
 
         if ($disable) {
@@ -52,7 +52,7 @@ class FileCacheWrapper
             $encodedData = serialize($data);
             $fileContent = strtotime($expTime).md5($encodedData).$encodedData;
             if (file_put_contents($filePath, $fileContent) === false) {
-                throw new Exception("Cannot write to $filePath");
+                throw new \Exception("Cannot write to $filePath");
             }
             // UNLOCK File after writing operations.
             flock($fileResource, LOCK_UN);
